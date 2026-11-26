@@ -1,0 +1,96 @@
+/* Japan in Numbers — the site's whole design.
+   System fonts only, so nothing is fetched from the network.
+   Colours: deep navy #16324f, vermilion #c0392b, warm paper #f7f4ee. */
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: #f7f4ee; color: #2e2b25;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px; line-height: 1.55;
+}
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: #16324f; line-height: 1.2; }
+h1 { font-size: 2rem; margin: 0.4em 0 0.3em; }
+h2 { font-size: 1.35rem; margin: 0 0 0.5em; border-bottom: 2px solid #c0392b; padding-bottom: 0.25em; }
+a { color: #16324f; }
+a:hover { color: #c0392b; }
+
+/* header + nav */
+.sitehead {
+  background: #16324f; color: #fff; padding: 0.7rem 1rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1.4rem;
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { color: #fff; text-decoration: none; font-family: Georgia, serif; font-size: 1.25rem; font-weight: 700; white-space: nowrap; }
+.brand .dot { display: inline-block; width: 0.7em; height: 0.7em; border-radius: 50%; background: #c0392b; margin-right: 0.45em; }
+nav { display: flex; flex-wrap: wrap; gap: 0.1rem 0.9rem; }
+nav a { color: #d7dee8; text-decoration: none; font-size: 0.95rem; padding: 0.15em 0.1em; }
+nav a[aria-current="page"] { color: #fff; font-weight: 700; border-bottom: 2px solid #c0392b; }
+nav a:hover { color: #fff; }
+
+/* page body */
+main { max-width: 1020px; margin: 0 auto; padding: 1rem 1rem 3rem; }
+.hero { background: #fff; border: 1px solid #e3ddd2; border-left: 5px solid #c0392b; padding: 1.2rem 1.4rem; margin-bottom: 1.2rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; color: #c0392b; font-weight: 700; margin: 0 0 0.4em; }
+.lede { font-size: 1.1rem; color: #4a463d; max-width: 62ch; }
+.panel { background: #fff; border: 1px solid #e3ddd2; padding: 1.1rem 1.3rem; margin: 1.2rem 0; }
+.source { font-size: 0.82rem; color: #6b6455; margin: 0.6em 0 0; }
+.notes { margin: 0.4em 0; padding-left: 1.2em; }
+.notes li { margin: 0.45em 0; }
+
+/* KPI cards */
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1rem 0; }
+.kpi { background: #fff; border: 1px solid #e3ddd2; border-top: 4px solid #16324f; padding: 0.8rem 0.95rem; }
+.kpi-label { font-size: 0.85rem; color: #6b6455; }
+.kpi-value { font-family: Georgia, serif; font-size: 1.9rem; font-weight: 700; color: #16324f; line-height: 1.15; }
+.kpi-change { font-size: 0.9rem; margin-top: 0.1em; }
+.kpi-meta { font-size: 0.78rem; color: #6b6455; margin-top: 0.35em; }
+
+/* tiles on the overview */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
+.tile { background: #fff; border: 1px solid #e3ddd2; padding: 0.9rem; text-decoration: none; display: block; }
+.tile:hover { border-color: #c0392b; }
+.tile-title { display: block; font-family: Georgia, serif; font-weight: 700; font-size: 1.05rem; color: #16324f; }
+.tile-blurb { display: block; font-size: 0.88rem; color: #4a463d; margin: 0.3em 0 0.5em; }
+.tile-go { font-size: 0.88rem; font-weight: 700; color: #c0392b; }
+
+/* tables */
+table.data { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+table.data th, table.data td { text-align: left; padding: 0.5em 0.6em; border-bottom: 1px solid #e3ddd2; }
+table.data th { background: #16324f; color: #fff; }
+table.data tr:nth-child(even) td { background: #faf8f3; }
+
+/* controls */
+input[type="search"], select {
+  font: inherit; padding: 0.5em 0.7em; border: 1px solid #b8b0a0; border-radius: 3px; background: #fff;
+}
+input[type="search"] { width: min(100%, 26rem); }
+button {
+  font: inherit; padding: 0.45em 0.9em; border: 1px solid #16324f; background: #fff;
+  color: #16324f; border-radius: 3px; cursor: pointer; margin: 0.15em 0.2em 0.15em 0;
+}
+button:hover, button.active { background: #16324f; color: #fff; }
+button.active { background: #c0392b; border-color: #c0392b; }
+.results { list-style: none; padding: 0; margin: 0.7em 0 0; }
+.results li { padding: 0.45em 0; border-bottom: 1px solid #ece7db; }
+.results .meta { font-size: 0.85rem; color: #6b6455; }
+.results .none { color: #6b6455; }
+
+footer.sitefoot {
+  max-width: 1020px; margin: 0 auto; padding: 0 1rem 2rem;
+  font-size: 0.85rem; color: #6b6455;
+}
+svg { display: block; max-width: 100%; height: auto; }
+
+/* phones */
+@media (max-width: 680px) {
+  body { font-size: 15px; }
+  h1 { font-size: 1.55rem; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .sitehead { position: static; }
+  main { padding: 0.7rem 0.7rem 2.5rem; }
+  .panel { padding: 0.9rem; }
+  table.data { font-size: 0.85rem; }
+  table.data th, table.data td { padding: 0.4em 0.35em; }
+}
